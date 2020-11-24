@@ -1,17 +1,17 @@
 #contact {
     flex-direction: column;
-    > h2 {
+    p {
+        font-size: 15px;
+        color: var(--gray-1);
+        font-weight: 600;
+    }
+    h2 {
+        padding: 0 var(--space);
+        margin: 0;
         font-size: 27px;
         font-weight: bold;
         color: var(--dark-0);
         text-transform: uppercase;
-        margin: 0;
-        padding: 0 var(--space);
-    }
-    p {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--gray-1);
     }
     > section {
         flex-direction: column;
@@ -23,17 +23,16 @@
         margin-top: var(--space);
     }
     .contacts {
-        margin: 0;
-        padding: var(--space);
-        margin-top: var(--space);
+        margin: var(--space) 0 0 0;
+        padding: 1em;
         flex-direction: column;
         li {
             border: var(--gray-3) 1px solid;
             width: 100%;
             flex-direction: column;
-            justify-content: center;
-            padding: var(--space);
-            margin-bottom: calc(var(--space) * 3);
+            justify-content:center;
+            padding: 1em;
+            margin-bottom: 4em;
             text-align: center;
             color: var(--gray-1);
             img {
@@ -41,37 +40,34 @@
                 background-color: var(--white);
                 margin: 0 auto;
                 margin-top: -60px;
-                padding: 0 var(--space);
+                padding: 0 15px;
+            }
+            .title {
+                font-weight: 600;
+                margin: 0;
+                font-size: 24px;
             }
             p {
+                font-weight:300;
                 margin: 0;
                 font-size: 25px;
-                font-weight: 300;
-                &.title {
-                    font-weight: 600;
-                    font-size: 24px;
-                }
             }
         }
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px){
     #contact {
-        > h2 {
-            font-size:  60px;
+        h2 {
+            font-size: calc(var(--space) * 3);
         }
         > section {
-            flex-direction:  row;
+            flex-direction: row;
             form, #map {
                 flex: 1;
-            }
+            } 
             form {
-               max-width: unset;
-               textarea {
-                   min-height: 160px;
-                   resize: vertical;
-               }
+                max-width: unset;
             }
             #map {
                 margin-left: 0;
@@ -80,21 +76,16 @@
         }
         .contacts {
             flex-direction: row;
-            li + li {
-                margin-left: var(--space);
+            li {
+                margin-right: 1em;
+                margin-bottom: 2em;
+                &:last-child {
+                    margin-right: unset;
+                }
             }
         }
-    }
-}
-
-@media (min-width: 1200px) {
-    #contact {
-        > section {
-            form {
-                textarea {
-                    min-height: 245px;
-                }
-            }   
+        textarea {
+            height: 245px;
         }
     }
 }
